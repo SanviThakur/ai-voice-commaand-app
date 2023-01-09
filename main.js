@@ -6,7 +6,7 @@ screen_width = 0;
 
 apple = "";
 speak_data = "";
-to_number = "";
+to_number = 0;
 
 draw_apple = "";
 
@@ -36,7 +36,7 @@ recognition.onresult = function(event) {
 
     if(Number.isInteger(to_number)){
       document.getElementById("status").innerHTML = "Started drawing apple";
-      draw_apple = set();
+      draw_apple = "set";
 
     }
 
@@ -64,11 +64,10 @@ function draw() {
       image(apple, x, y, 50, 50);
     }
     document.getElementById("status").innerHTML = to_number + " Apples drawn";
-    draw_apple = "";
-
-    speak_data = to_number;
+    speak_data = to_number + "Apples Drawn";
     speak();
-    
+        draw_apple = "";
+
   }
 }
 
